@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Matching Game!</title>
+	<meta name="description" content="">
+	<meta name="author" content="Michael Arriete">
+
+	<!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Satisfy" rel="stylesheet">
+	<link rel="stylesheet" href="css/app.css">
+
+</head>
+
+<body>
+	<header>
+		<!-- Game Title -->
+		<h1>Matching Game!</h1>
+	</header>
+	<section>
+		<!-- Move counter and refresh button -->
+		<span id='timer'><label id="minutes">00</label>:<label id="seconds">00</label></span>
+		<!-- <span id="timer">0:00</span> -->
+		<span id="rating">
+			<img class='star-1' src="imgs/star.png">
+			<img class='star-2' src="imgs/star.png">
+			<img class='star-3' src="imgs/star.png">
+		</span>
+		<span id='counter'>
+			<span id='count'>0</span><span> Moves</span>
+		</span>
+		<button id='refresh'><i class="material-icons">refresh</i></button>
+	</section>
+	<main>
+		<!-- Game Board -->
+		<table id='matching-game'></table>
+	</main>
+
+	<!-- Winning Modal -->
+	<div id='myModal' class='modal'>
+		<!-- Modal Content -->
+		<div class='modal-content'>
+			<span class='close'>&times;</span>
+			<h2 class='congrats'>Congratulations! You won!</h2>
+			<!-- Modal Data -->
+			<div class='modal-data'>
+				<span class='data-span'>
+					<h3 class='info'>Moves</h3>
+					<span class='count data'></span>
+				</span>
+				<span class='data-span'>
+					<h3 class='info'>Time</h3>
+					<span class='time data'></span>
+				</span>
+				<span class='data-span'>
+					<h3 class='info'>Star Rating</h3>
+					<span id='stars' class='data'></span>
+				</span>
+			</div>
+			<div class="play-again">
+	          <button id="restart">Play Again!</button>
+	        </div>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+</body>
+</html>

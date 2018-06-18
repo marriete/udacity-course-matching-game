@@ -1,0 +1,245 @@
+body {
+	background: #f0f8ff;
+}
+
+table,
+tr,
+td,
+.front,
+.back {
+	border-radius: 10px;
+	border-spacing: 30px;
+}
+
+table {
+	margin: auto;
+	border-collapse: separate;
+	background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+	box-shadow: 10px 10px 5px #c0c0c0ff;
+}
+
+tr {
+	height: 125px;
+}
+
+td {
+	width: 125px;
+	height: 132px;
+	text-align: center;
+	font-size: 3.40em;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+	cursor: pointer;
+	perspective: 1000px;
+	z-index: 3;
+}
+
+header, section {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 650px;
+	margin: auto;
+}
+
+h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+section {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+button {
+    background-color: inherit;
+    border-style: none;
+    cursor: pointer;
+}
+
+h2 {
+	font-size: 35px;
+}
+
+img {
+	width: 30px;
+}
+
+@keyframes incorrect {
+	20%, 80% {
+		transform: rotateY(180deg) rotate(5deg);
+	}
+	40%, 60% {
+		transform: rotateY(180deg) rotate(-10deg);
+	}
+	50% {
+		transform: rotateY(180deg) rotate(10deg);
+	}
+}
+
+@keyframes correct {
+	20%, 80% {
+		-moz-transform: rotateY(180deg) skewX(30deg);
+		-moz-transform: rotateY(180deg) scale(1.15, 0.85);
+		-webkit-transform: rotateY(180deg) skewX(30deg);
+		-webkit-transform: rotateY(180deg) scale(1.15, 0.85);
+		transform: rotateY(180deg) skewX(30deg);
+		transform: rotateY(180deg) scale(1.15, 0.85);
+	}
+	40%, 60% {
+		-moz-transform: rotateY(180deg) skewX(30deg);
+		-moz-transform: rotateY(180deg) scale(0.85, 1.15);
+		-webkit-transform: rotateY(180deg) skewX(30deg);
+		-webkit-transform: rotateY(180deg) scale(0.85, 1.15);
+		transform: rotateY(180deg) skewX(30deg);
+		transform: rotateY(180deg) scale(0.85, 1.15);
+	}
+	50% {
+		-moz-transform: rotateY(180deg) skewX(30deg);
+		-moz-transform: rotateY(180deg) scale(1.15, 0.85);
+		-webkit-transform: rotateY(180deg) skewX(30deg);
+		-webkit-transform: rotateY(180deg) scale(1.15, 0.85);
+		transform: rotateY(180deg) skewX(30deg);
+		transform: rotateY(180deg) scale(1.15, 0.85);
+	}
+}
+
+#counter,
+#refresh,
+#timer,
+#rating {
+	width: 25%;
+	text-align: center;
+	font-family: 'Dancing Script', cursive;
+	font-size: 20px;
+	margin: auto;
+}
+
+#restart {
+	margin: 20px;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    background: #676be6;
+    font-weight: bold;
+    color: white;
+}
+
+.flipped {}
+
+.front, .back {
+	display: table;
+	width: 100%;
+	height: 50%;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* Front pane positioned above back */
+.front {
+	background: #202E4AFF;
+	z-index: 2;
+}
+
+/* Back pane initially hidden */
+.back {
+	background: #29EF;
+	transform: rotateY(180deg);
+}
+
+/* Flip the card when hovered */
+.flip {
+	transform: rotateY(180deg);
+}
+
+/* Correct animation call and timing */
+.correct {
+	animation: correct 0.87s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	animation-delay: 300ms;
+	transition: background-color 0ms step-start 350ms;
+	background-color: #1EE035FF;
+}
+
+/* Incorrect animation call and timing */
+.incorrect {
+	animation: incorrect 0.87s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	animation-delay: 375ms;
+	transition: background-color 0s step-start 300ms;
+	background-color: #D82626FF;
+}
+
+/* Modal CSS */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
+    font-family: 'Fugaz One', cursive;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #5bc84e;
+    margin: 20% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 48%; /* Could be more or less, depending on screen size */
+    border-radius: 20px;
+}
+
+.modal-data {
+	display: flex;
+    flex-wrap: wrap;
+    font-size: 25px;
+}
+
+.data-span {
+	width: 33%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.info, .data {
+	width: 100%;
+	margin: 0;
+}
+
+.info {
+    /*padding-left: auto;*/
+}
+
+.data {
+    /*padding-right: auto;*/
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
